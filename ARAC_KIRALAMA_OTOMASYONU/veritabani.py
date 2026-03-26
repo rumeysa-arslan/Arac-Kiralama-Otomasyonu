@@ -5,8 +5,6 @@ class Database:
     def __init__(self,
                  host="localhost",
                  user="root",
-                 password="deneme",
-                 database="db90240000234",
                  port=3306):
 
         self.host = host
