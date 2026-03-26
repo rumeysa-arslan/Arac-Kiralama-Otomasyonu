@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>622</width>
+    <height>540</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* --- GENEL ARKA PLAN --- */
+QWidget {
+    background-color: #E3F2FD; /* Ana ekranla aynı açık mavi ton */
+    font-family: &quot;Segoe UI&quot;;   /* Okunaklı modern yazı tipi */
+    font-size: 13px;
+}
+
+/* --- GRUP KUTULARI (Kişisel Bilgiler vb.) --- */
+QGroupBox {
+    border: 2px solid #2196F3; /* Mavi Çerçeve */
+    border-radius: 10px;       /* Köşeleri Yuvarlat */
+    margin-top: 25px;          /* Başlık için pay */
+    font-weight: bold;
+    color: #0D47A1;            /* Başlık Rengi: Koyu Lacivert */
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top center; /* Başlığı ortala */
+    padding: 0 10px;
+    background-color: #E3F2FD; /* Çizgi yazının altından geçmesin */
+}
+
+/* --- YAZI ETİKETLERİ (Ad, Soyad vb.) --- */
+QLabel {
+    color: #1565C0; /* Orta koyulukta mavi */
+    font-weight: bold;
+    border: none;
+    background-color: transparent;
+}
+
+/* --- GİRİŞ KUTULARI (Text, Combo, Date) --- */
+QLineEdit, QComboBox, QDateEdit, QPlainTextEdit {
+    background-color: white;   /* İçi bembeyaz olsun */
+    border: 1px solid #90CAF9; /* İnce mavi çerçeve */
+    border-radius: 5px;
+    padding: 5px;
+    color: #333333;            /* Yazılan yazı koyu gri */
+}
+
+/* Kutulara tıklayınca (Odaklanınca) */
+QLineEdit:focus, QComboBox:focus, QDateEdit:focus, QPlainTextEdit:focus {
+    border: 2px solid #2196F3; /* Seçili kutunun çerçevesi kalınlaşsın */
+}
+
+/* --- BUTONLAR (Genel) --- */
+QPushButton {
+    background-color: #1976D2; /* Ana menüdeki mavi buton */
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: bold;
+    border: none;
+}
+
+QPushButton:hover {
+    background-color: #1565C0; /* Üzerine gelince koyulaşsın */
+}
+
+QPushButton:pressed {
+    background-color: #0D47A1; /* Tıklayınca daha da koyu */
+}</string>
+  </property>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>30</y>
+     <width>231</width>
+     <height>281</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Araç Kimlik İşlemleri</string>
+   </property>
+   <widget class="QWidget" name="gridLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>50</y>
+      <width>198</width>
+      <height>211</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="4" column="0">
+      <widget class="QLabel" name="label_5">
+       <property name="text">
+        <string>Üretim Yılı:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>Marka:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_4">
+       <property name="text">
+        <string>Motor No:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string>Model:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="label_6">
+       <property name="text">
+        <string>Şasi No:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Plaka:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="lineEdit">
+       <property name="inputMask">
+        <string>99999999999</string>
+       </property>
+       <property name="placeholderText">
+        <string>45 ABC 123</string>
+       </property>
+       <property name="cursorMoveStyle">
+        <enum>Qt::CursorMoveStyle::LogicalMoveStyle</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <widget class="QLineEdit" name="lineEdit_4">
+       <property name="placeholderText">
+        <string>TR12345678901234567</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QComboBox" name="comboBox_3"/>
+     </item>
+     <item row="1" column="1">
+      <widget class="QComboBox" name="comboBox_4"/>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="lineEdit_2"/>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="lineEdit_5"/>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>490</y>
+     <width>121</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>İPTAL</string>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_2">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>30</y>
+     <width>241</width>
+     <height>411</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Teknik ve Kiralama Detayları</string>
+   </property>
+   <widget class="QWidget" name="gridLayoutWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>50</y>
+      <width>225</width>
+      <height>354</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_2">
+     <item row="5" column="1">
+      <widget class="QComboBox" name="comboBox_2">
+       <item>
+        <property name="text">
+         <string>2</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>4</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="6" column="0">
+      <widget class="QLabel" name="label_16">
+       <property name="text">
+        <string>Çekiş:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QComboBox" name="comboBox">
+       <item>
+        <property name="text">
+         <string>Manuel</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Otomatik</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Yarı Otomatik</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_9">
+       <property name="text">
+        <string>Kasa Tipi:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="QComboBox" name="comboBox_8">
+       <item>
+        <property name="text">
+         <string>Önden Çekiş</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Arkadan İtiş</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string> 4x4(Dört Çeker)</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QLineEdit" name="lineEdit_7"/>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="lineEdit_6">
+       <property name="placeholderText">
+        <string>110 HP</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QComboBox" name="comboBox_5">
+       <item>
+        <property name="text">
+         <string>Benzin</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Dizel</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Benzin &amp; LPG</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Elektrik</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Hibrit</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="label_15">
+       <property name="text">
+        <string>Kapı Sayısı:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="label_14">
+       <property name="text">
+        <string>Renk:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="1">
+      <widget class="QLineEdit" name="lineEdit_8">
+       <property name="placeholderText">
+        <string>1600 cc</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_13">
+       <property name="text">
+        <string>Motor Gücü:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_8">
+       <property name="text">
+        <string>Vites:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QComboBox" name="comboBox_6">
+       <item>
+        <property name="text">
+         <string>Sedan</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Hatchback</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Station Wagon</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>SUV</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Cabrio</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Coupe</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Minivan</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Pick-up</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_7">
+       <property name="text">
+        <string>Yakıt Tipi:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="0">
+      <widget class="QLabel" name="label_17">
+       <property name="text">
+        <string>Motor Hacmi:</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_3">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>320</y>
+     <width>221</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Fiyat ve Durum</string>
+   </property>
+   <widget class="QWidget" name="gridLayoutWidget_3">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>40</y>
+      <width>191</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_3">
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_19">
+       <property name="text">
+        <string>Günlük Ücret:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QComboBox" name="comboBox_9">
+       <item>
+        <property name="text">
+         <string>Boşta</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Kirada</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Bakımda</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_18">
+       <property name="text">
+        <string>Durumu:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QLabel" name="label_20">
+       <property name="text">
+        <string>TL</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="lineEdit_9">
+       <property name="placeholderText">
+        <string>0.00</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>490</y>
+     <width>121</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>KAYDET</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

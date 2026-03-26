@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>544</width>
+    <height>382</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* --- GENEL ARKA PLAN --- */
+QWidget {
+    background-color: #E3F2FD; /* Ana ekranla aynı açık mavi ton */
+    font-family: &quot;Segoe UI&quot;;   /* Okunaklı modern yazı tipi */
+    font-size: 13px;
+    color: #333333;
+}
+
+/* --- TABLO TASARIMI (En Önemli Kısım) --- */
+QTableWidget {
+    background-color: white;       /* Tablo içi bembeyaz */
+    border: 2px solid #2196F3;     /* Mavi Çerçeve (Diğer kutularla uyumlu) */
+    border-radius: 10px;           /* Köşeleri yuvarlat */
+    gridline-color: #E0E0E0;       /* Satır çizgileri çok silik gri */
+    selection-background-color: #BBDEFB; /* Seçili satır açık mavi olsun */
+    selection-color: #000000;      /* Seçili yazı siyah kalsın */
+    padding: 5px;
+}
+
+/* --- TABLO BAŞLIKLARI (Üst Kısım) --- */
+QHeaderView::section {
+    background-color: #1976D2;     /* Başlıklar koyu mavi olsun */
+    color: white;                  /* Başlık yazıları beyaz */
+    padding: 6px;
+    border: 1px solid #1565C0;     /* Aralarda ince çizgiler */
+    font-weight: bold;             /* Kalın yazı */
+    font-size: 14px;
+}
+
+/* Sol üst köşedeki boş kutucuk (Tablo kesişimi) */
+QTableCornerButton::section {
+    background-color: #1976D2;
+    border: 1px solid #1565C0;
+}
+
+/* --- BUTONLAR (Senin Kodunla Aynı) --- */
+QPushButton {
+    background-color: #1976D2; 
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: bold;
+    border: none;
+    min-width: 100px; /* Butonlar çok dar olmasın */
+}
+
+QPushButton:hover {
+    background-color: #1565C0; /* Üzerine gelince koyulaşsın */
+}
+
+QPushButton:pressed {
+    background-color: #0D47A1; /* Tıklayınca daha da koyu */
+}
+
+/* --- ETİKETLER (Başlıklar vb.) --- */
+QLabel {
+    color: #0D47A1; /* Koyu Lacivert (Diğer sayfadaki başlık rengi) */
+    font-weight: bold;
+    font-size: 15px; /* Başlıklar biraz daha büyük dursun */
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>KİRADA OLAN ARAÇLAR</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QTableWidget" name="tblKiradaAraclar">
+     <property name="styleSheet">
+      <string notr="true">/* --- GENEL SAYFA YAPISI --- */
+QWidget {
+    background-color: #E3F2FD; /* Ana arka plan açık mavi */
+    font-family: &quot;Segoe UI&quot;, sans-serif; /* Modern yazı tipi */
+    color: #333333;
+}
+
+/* --- ANA BAŞLIK (Label) --- */
+QLabel {
+    color: #1565C0; /* Koyu mavi başlık rengi */
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* --- TABLO TASARIMI (QTableWidget) --- */
+QTableWidget {
+    background-color: #FFFFFF; /* Tablo içi beyaz */
+    border: 2px solid #2196F3; /* Kenarlık mavi */
+    border-radius: 8px; /* Köşeler yuvarlak */
+    gridline-color: #BBDEFB; /* Satır çizgileri açık mavi */
+    selection-background-color: #64B5F6; /* Seçili satır rengi */
+    selection-color: #FFFFFF; /* Seçili yazı rengi */
+}
+
+/* --- TABLO BAŞLIKLARI (Header) --- */
+QHeaderView::section {
+    background-color: #1976D2; /* Başlık arka planı koyu mavi */
+    color: #FFFFFF; /* Başlık yazısı beyaz */
+    padding: 6px 4px; /* İç boşluk */
+    border: none; /* Başlıklar arası çizgi olmasın */
+    border-right: 1px solid #1565C0; /* Sadece sağda ince çizgi */
+    font-weight: bold;
+}
+
+/* Tablonun sol üst köşesindeki boş kutu */
+QTableCornerButton::section {
+    background-color: #1976D2;
+    border: none;
+}
+
+/* --- BUTONLAR (QPushButton) --- */
+QPushButton {
+    background-color: #1976D2; /* Buton rengi mavi */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px; /* Butonları biraz genişlet */
+    font-weight: bold;
+    font-size: 13px;
+}
+
+QPushButton:hover {
+    background-color: #1565C0; /* Üzerine gelince koyulaşsın */
+}
+
+QPushButton:pressed {
+    background-color: #0D47A1; /* Tıklayınca daha koyu */
+}</string>
+     </property>
+     <property name="editTriggers">
+      <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+     </property>
+     <property name="selectionBehavior">
+      <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
+     </property>
+     <attribute name="horizontalHeaderDefaultSectionSize">
+      <number>150</number>
+     </attribute>
+     <attribute name="horizontalHeaderStretchLastSection">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="verticalHeaderDefaultSectionSize">
+      <number>23</number>
+     </attribute>
+     <column>
+      <property name="text">
+       <string>Araç Bilgisi</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Plaka</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Müşteri Ad Soyad</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Dönüş Tarihi</string>
+      </property>
+     </column>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="pushButton_2">
+     <property name="text">
+      <string>KAPAT</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="pushButton">
+     <property name="text">
+      <string>LİSTEYİ YENİLE</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
